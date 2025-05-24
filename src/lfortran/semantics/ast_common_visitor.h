@@ -1232,7 +1232,11 @@ public:
         {"digits", IntrinsicSignature({"x"}, 1, 1)},
         {"present", IntrinsicSignature({"a"}, 1, 1)},
         {"leadz", IntrinsicSignature({"i"}, 1, 1)},
-        {"trailz", IntrinsicSignature({"i"}, 1, 1)}
+        {"trailz", IntrinsicSignature({"i"}, 1, 1)},
+
+
+        // LP Ported intrinsics
+        {"_lfortran_list_append", IntrinsicSignature({"list", "element"}, 2, 2)},
     };
 
 
@@ -4509,7 +4513,7 @@ public:
                 if (derived_type_name == "_lfortran_list_integer") {
                     /*return determine_type(loc, sym, decl_attribute, is_pointer,*/
                     /*    is_allocatable, dims, type_declaration, abi, is_argument);*/
-                    return ASRUtils::TYPE(ASR::make_List_t(al, loc, ASRUtils::TYPE(ASR::make_Integer_t(al, loc, 8))));
+                    return ASRUtils::TYPE(ASR::make_List_t(al, loc, ASRUtils::TYPE(ASR::make_Integer_t(al, loc, 4))));
                 }
             
             }
