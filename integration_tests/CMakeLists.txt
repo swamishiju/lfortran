@@ -2176,3 +2176,7 @@ RUN(NAME separate_compilation_02 LABELS gfortran llvm EXTRAFILES separate_compil
 
 RUN(NAME no_explicit_return_type_01 LABELS gfortran llvm llvm_wasm llvm_wasm_emcc
     EXTRA_ARGS --implicit-typing)
+
+
+# LP integration tests 
+RUN(NAME lp_list_test_01 LABELS gfortran llvm llvm_wasm llvm_wasm_emcc)
